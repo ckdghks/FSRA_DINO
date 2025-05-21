@@ -1,25 +1,27 @@
-<h1 align="center"> FSRA </h1>
+<h1 align="center"> FSRA (Modified for Custom Project) </h1>
 
-This repository contains the dataset link and the code for our paper [A Transformer-Based Feature Segmentation and Region Alignment Method For UAV-View Geo-Localization](https://arxiv.org/abs/2201.09206), IEEE Transactions on Circuits and Systems for Video Technology. Thank you for your kindly attention.
+This repository is based on the original implementation of [FSRA: A Transformer-Based Feature Segmentation and Region Alignment Method For UAV-View Geo-Localization](https://arxiv.org/abs/2201.09206), published in IEEE Transactions on Circuits and Systems for Video Technology.
 
-## requirement
-1. Download the [University-1652](https://github.com/layumi/University1652-Baseline) dataset
-2. Configuring the environment
-   * First you need to configure the torch and torchision from the [pytorch](https://pytorch.org/) website
-   * ```shell
-     pip install -r requirement.txt
-     ```
+We modified the original FSRA implementation to better fit our custom project requirements and experiments.
 
-## Download pre-training weights
-You can download the pre-training weight from the following link and put them in the **pretrain_model** folder
+---
 
-1. [Baidu Driver](https://pan.baidu.com/s/1znsBPytTo9_W5ZxGa1Dvow)  code: 0000
+## 🚀 Setup Instructions
 
-2. [Google Driver](https://drive.google.com/file/d/1-Rp-VAlUdb_dRbquyWhD6pdkhXYrwu-w/view?usp=drive_link)
+### 1. Dataset Preparation
+Download the **University-1652** dataset from the official repository:
 
-## Train and Test
-We provide scripts to complete FSRA training and testing
-* Change the **data_dir** and **test_dir** paths in **train_test_local.sh** and then run:
-```shell
-bash train_test_local.sh
-```
+👉 [University-1652 Dataset GitHub](https://github.com/layumi/University1652-Baseline)
+
+Place the dataset under the appropriate path (e.g., `./data/`).
+
+---
+
+### 2. Environment Setup
+
+Make sure you have PyTorch and torchvision installed.
+
+You can install all other required dependencies using:
+
+```bash
+pip install -r requirements.txt
