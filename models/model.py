@@ -59,8 +59,7 @@ class three_view_net(nn.Module):
 
 def make_model(opt):
     if opt.views == 2:
-        model = two_view_net(opt, opt.nclasses, block=opt.block,return_f=opt.triplet_loss)
+        model = two_view_net(opt, opt.nclasses, block=opt.block,return_f=True)
     elif opt.views == 3:
-        model = three_view_net(opt, opt.nclasses, share_weight=opt.share,block=opt.block,return_f=opt.triplet_loss)
+        model = three_view_net(opt, opt.nclasses, share_weight=opt.share,block=opt.block,return_f=True)
     return model
-

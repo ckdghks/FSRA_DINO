@@ -111,7 +111,7 @@ def load_network(opt):
     save_filename = opt.checkpoint
 
     if opt.views == 2:
-        model = two_view_net(opt.nclasses, block=opt.block)
+        model = two_view_net(opt, class_num=opt.nclasses, block=opt.block)
     elif opt.views == 3:
         model = three_view_net(opt.nclasses, opt.droprate, block=opt.block)
 

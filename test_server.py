@@ -30,13 +30,13 @@ except ImportError: # will be 3.x series
 # --------
 parser = argparse.ArgumentParser(description='Training')
 parser.add_argument('--gpu_ids',default='0', type=str,help='gpu_ids: e.g. 0  0,1,2  0,2')
-parser.add_argument('--test_dir',default='/home/dmmm/University-Release/test',type=str, help='./test_data')
+parser.add_argument('--test_dir',default='/workspace/mount/SSD_2T_a/AAM_Data/University_dataset/University-Release/test',type=str, help='./test_data')
 parser.add_argument('--checkpoint', default='net_119.pth', type=str, help='save model path')
 parser.add_argument('--batchsize', default=128, type=int, help='batchsize')
 parser.add_argument('--h', default=256, type=int, help='height')
 parser.add_argument('--w', default=256, type=int, help='width')
 parser.add_argument('--ms',default='1', type=str,help='multiple_scale: e.g. 1 1,1.1  1,1.1,1.2')
-parser.add_argument('--mode',default='1', type=int,help='1:drone->satellite   2:satellite->drone')
+parser.add_argument('--mode',default='2', type=int,help='1:drone->satellite   2:satellite->drone')
 parser.add_argument('--num_worker',default=4, type=int,help='1:drone->satellite   2:satellite->drone')
 parser.add_argument('--pad', default=0, type=int, help='')
 
@@ -45,10 +45,10 @@ opt = parser.parse_args()
 # load the training config
 config_path = 'opts.yaml'
 with open(config_path, 'r') as stream:
-    config = yaml.load(stream)
+    config = yaml.load(stream, Loader=yaml.SafeLoader)
 opt.views = config['views']
 opt.block = config['block']
-opt.share = config['share']
+# opt.share = config['share']
 opt.backbone = config["backbone"]
 opt.pretrain_path = config["pretrain_path"]
 
