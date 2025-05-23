@@ -24,8 +24,5 @@ Make sure you have PyTorch and torchvision installed.
 You can install all other required dependencies using:
 
 ```bash
-<<<<<<< HEAD
 pip install -r requirements.txt
-=======
-pip install -r requirements.txt
->>>>>>> 364f95c (v1.0)
+
